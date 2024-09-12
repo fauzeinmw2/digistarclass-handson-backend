@@ -184,13 +184,13 @@ async function processPayment(transactionId, methodPayment) {
     const updatedTransaction = await transaction.save();
 
     return updatedTransaction;
-  } catch (error) {
-      throw new Error(`Failed to process payment: ${error.message}`);
-  }
+    } catch (error) {
+        throw new Error(`Failed to process payment: ${error.message}`);
+    }
 }
 
 async function processDelivery(transactionId, deliveryDetails) {
-  try {
+    try {
       // Update delivery details
       const result = await Transaction.findByIdAndUpdate(
           transactionId,
